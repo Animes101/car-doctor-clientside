@@ -7,8 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mozilaText: ["Mozilla Text", "sans-serif"], 
-        eduNsw: ["Edu NSW ACT Cursive", "cursive"],// Custom font name
+        inter: [ "Inter", "sans-serif"], // Custom font family
       },
     },
    },

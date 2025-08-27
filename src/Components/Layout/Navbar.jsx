@@ -25,17 +25,18 @@ const Navbar = () => {
                <a className="btn md:py-7 md:px-9 border border-[#FF3811] text-[#FF3811] text-[18px] font-bold">Appointment</a>
             </ul>
           </div>
+          {/* logo */}
           <a className="cursor-pointer">
-            <img className="w-[50px] md:w-[100px]" src={logo} alt="" />
+            <img className="w-[50px] md:w-[100px]" src={logo} alt="logo" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="text-[18px] font-bold"><NavLink to="/" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Home</NavLink></li>
-            <li className="text-[18px] font-bold"><NavLink to="/about" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>About</NavLink></li>
-            <li className="text-[18px] font-bold"><NavLink to="/services" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Services</NavLink></li>
-            <li className="text-[18px] font-bold"><NavLink to="/blog" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Blog</NavLink></li>
-            <li className="text-[18px] font-bold"><NavLink to="/contact" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Contact</NavLink></li>
+            <li className="text-[18px] font-bold font-inter"><NavLink to="/" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Home</NavLink></li>
+            <li className="text-[18px] font-bold font-inter"><NavLink to="/about" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>About</NavLink></li>
+            <li className="text-[18px] font-bold font-inter"><NavLink to="/services" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Services</NavLink></li>
+            <li className="text-[18px] font-bold font-inter"><NavLink to="/blog" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Blog</NavLink></li>
+            <li className="text-[18px] font-bold font-inter"><NavLink to="/contact" className={({ isActive }) =>isActive ? "text-green-500 font-bold hover:bg-white" : "text-black hover:bg-white"}>Contact</NavLink></li>
           </ul>
         </div>
         <div className="navbar-end">
