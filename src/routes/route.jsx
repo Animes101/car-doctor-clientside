@@ -6,6 +6,7 @@ import NotFound404 from "../Pages/NotFound404";
 import About from "../Pages/About";
 import Services from "../Pages/Services";
 import Login from "../Pages/Login";
+import Resister from "../Pages/Resister";
 import ServicesDetails from "../Pages/ServicesDetails";
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {path:'/services', element:<Services />},
       {path:'/servicesdetails/:_id', element:<ServicesDetails />},
       {path:'/login', element:<Login />},
+      {path:'/singup', element:<Resister />},
       
 
     ],

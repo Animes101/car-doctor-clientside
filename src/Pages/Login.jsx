@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import NavBar from '../Components/Layout/Navbar'
 import Navbar from '../Components/Layout/Navbar'
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
 import logonImg from '../assets/images/login/login.svg'
+import { AuthContext } from '../context/AuthProvider';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
   const [user, setUsers]=useState({name:'', email:'', password:''});
     const [error, setError] = useState("");
+    const navigate=useNavigate();
+
+
+    const {signInUser,googleSignIn}=useContext(AuthContext);
 
 
         // আমাদের regex (A, @, কমপক্ষে 5 digit)
@@ -33,7 +39,12 @@ const Login = () => {
               return;
             }
             setError("");
-            console.log(user);
+
+            signInUser(user.email, user.password)
+            .then(result=> {
+              
+              navigate('/')
+            })
 
 
 
@@ -41,12 +52,13 @@ const Login = () => {
 
           //  handleGoogle Login
           const handleGoogleLogin=()=>{
-            alert('google Login')
+            googleSignIn()
+            .then(result=> console.log(result.user))
+            .catch(err=> console.log(err.message))
           }
 
   return (
     <div>
-      <Navbar />
       <div className="hero bg-base-200 min-h-[calc(100vh-300px)] container mx-auto py-7">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="text-center lg:text-left">
@@ -69,6 +81,7 @@ const Login = () => {
                   <h2>Or Sign In with</h2>
                   <button onClick={handleGoogleLogin} className="btn btn-neutral mt-4"><FcGoogle className='text-3xl' /></button>
                   <button className="btn btn-neutral mt-4"><FaFacebook  className='text-3xl'/></button>
+                  <Link to={'/singup'}>Go To SingUp Page</Link>
                 </form>
               </div>
             </div>

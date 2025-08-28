@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 const ServicesCard = ({card}) => {
 
-    console.log(card);
-
     const {img,price,title,_id}=card;
   return (
 
