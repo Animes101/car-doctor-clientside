@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+
 import ReactHelmet from '../Components/Layout/ReactHelmet'
 import Navbar from '../Components/Layout/Navbar'
 import Banner from '../Components/Banner'
