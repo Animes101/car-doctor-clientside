@@ -8,6 +8,7 @@ import Services from "../Pages/Services";
 import Login from "../Pages/Login";
 import Resister from "../Pages/Resister";
 import ServicesDetails from "../Pages/ServicesDetails";
+import CheckOut from "../Pages/CheckOut";
 
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {path:'/about', element:<About />},
       {path:'/services', element:<Services />},
       {path:'/servicesdetails/:_id', element:<ServicesDetails />},
+      {path:'/checkout', element:<CheckOut />},
       {path:'/login', element:<Login />},
       {path:'/singup', element:<Resister />},
       

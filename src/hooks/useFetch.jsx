@@ -14,7 +14,7 @@ const useFetch = (url) => {
           throw new Error("Failed to fetch data"); // যদি response না আসে
         }
         const result = await res.json();
-        setData(result);   // set data
+        setData(result.data);   // set data
         setError(null);    // reset error
       } catch (err) {
         setError(err.message); // error set

@@ -3,13 +3,15 @@ import ReactHelmet from '../Components/Layout/ReactHelmet'
 import Navbar from '../Components/Layout/Navbar'
 import Banner from '../Components/Banner'
 import AboutHero from '../Components/AboutHero'
-import useFetch from '../hooks/useFetch'
 import ServicesCard from '../Components/ServicesCard'
+import useFetch from '../hooks/useFetch'
+
 
 const Home = () => {
 
-    const { data, loading, error } =useFetch('services.json')
+  const {data}=useFetch(`http://localhost:3000/services`)
 
+ 
 
 
   return (
@@ -44,8 +46,6 @@ const Home = () => {
               {data?.map((item)=> <ServicesCard key={item._id}  card={item} />)}
             </div>
       </section>
-
-
     </section>
       
   )
