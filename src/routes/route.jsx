@@ -9,6 +9,8 @@ import Login from "../Pages/Login";
 import Resister from "../Pages/Resister";
 import ServicesDetails from "../Pages/ServicesDetails";
 import CheckOut from "../Pages/CheckOut";
+import ViewOrder from "../Pages/ViewOrder";
+import PrivetRoute from "./PrivetRoute";
 
 
 
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
       {path:'/services', element:<Services />},
       {path:'/servicesdetails/:_id', element:<ServicesDetails />},
       {path:'/checkout', element:<CheckOut />},
+      {path:'/vieworder', element:<PrivetRoute><ViewOrder /></PrivetRoute>},
       {path:'/login', element:<Login />},
       {path:'/singup', element:<Resister />},
       

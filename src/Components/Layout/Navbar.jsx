@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import logo from "../../assets/logo.svg"
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthProvider";
@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <button className="text-[30px] mr-6"><FaSearch  /></button>
-          <button className="text-[30px] mr-6"><FaShoppingBag /></button>
+          <Link to={'/vieworder'} className="text-[30px] mr-6"><FaShoppingBag /></Link>
           <button onClick={handleLogout} className="text-[20px]">Logout</button>
           {user? <div className={`${ user? 'avatar avatar-online' :'avatar'}`}>
             <div className="w-24 rounded-full">
