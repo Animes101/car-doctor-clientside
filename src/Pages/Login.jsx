@@ -6,17 +6,17 @@ import { FaFacebook } from "react-icons/fa";
 
 import logonImg from '../assets/images/login/login.svg'
 import { AuthContext } from '../context/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
   const [user, setUsers]=useState({name:'', email:'', password:''});
     const [error, setError] = useState("");
     const navigate=useNavigate();
+    const location=useLocation();
 
 
     const {signInUser,googleSignIn}=useContext(AuthContext);
-
 
         // আমাদের regex (A, @, কমপক্ষে 5 digit)
         const passwordRegex = /^(?=.*A)(?=.*@)(?=(?:.*\d){5,}).+$/;
@@ -42,11 +42,23 @@ const Login = () => {
 
             signInUser(user.email, user.password)
             .then(result=> {
+              const email=result.user.email
               
-              navigate('/')
-            })
-
-
+              fetch('http://localhost:3000/jwt',{
+                method:'POST',
+                headers:{  "Content-Type": "application/json",},
+                body:JSON.stringify({email}),
+                credentials: "include" 
+              })
+              .then(res=>res.json())
+              .then(result=> {
+                if(result){
+                  navigate(`${location.state ? location.state : '/'}`)
+                }
+              }
+              )
+            }
+            )
 
           }
 

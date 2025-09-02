@@ -9,7 +9,9 @@ const useFetch = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);   // start loading
-        const res = await fetch(url);
+        const res = await fetch(url, {
+          credentials: "include",
+        });
         if (!res.ok) {
           throw new Error("Failed to fetch data"); // যদি response না আসে
         }

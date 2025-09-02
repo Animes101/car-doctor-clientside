@@ -70,7 +70,7 @@ const ViewOrder = () => {
                 timer: 1500
                 });
 
-                const remining=data.filter9(item=> item._id !== id)
+                const remining=data.filter(item=> item._id !== id)
                 const update=data.find(item=> item._id == id)
                 const newOrder=[update, ... remining]
                 setOrders(newOrder)
