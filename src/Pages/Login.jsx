@@ -42,21 +42,14 @@ const Login = () => {
 
             signInUser(user.email, user.password)
             .then(result=> {
-              const email=result.user.email
-              
-              fetch('http://localhost:3000/jwt',{
-                method:'POST',
-                headers:{  "Content-Type": "application/json",},
-                body:JSON.stringify({email}),
-                credentials: "include" 
-              })
-              .then(res=>res.json())
-              .then(result=> {
-                if(result){
-                  navigate(`${location.state ? location.state : '/'}`)
-                }
-              }
-              )
+              const email=result.user.email;
+                  fetch('http://localhost:3000/login',{
+                    method:'POST',
+                    headers:{'Content-Type': 'application/json'},
+                    body:JSON.stringify({email})
+                  })
+                  .then(res=> res.json())
+                  .then(data=> console.log(data))
             }
             )
 
